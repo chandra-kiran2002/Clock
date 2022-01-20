@@ -3,13 +3,13 @@ import time
 from digital_clock import Digital_clock
 t = time.localtime()
 current__time = time.strftime("%H:%M:%S", t)
-
+screen = Screen()
+screen.tracer(0)
 digital = Digital_clock()
 digital.penup()
 digital.goto(0, -60)
 digital.hideturtle()
-screen = Screen()
-screen.tracer(0)
+
 
 screen.title("                                                                                     CLOCK")
 for x in range(0, 360, 30):
@@ -51,13 +51,13 @@ clock.penup()
 clock.goto(220, 0)
 clock.setheading(90)
 clock.pendown()
+clock.hideturtle()
 clock.circle(220)
-screen.update()
 re = Turtle()
 re.shape("circle")
 re.shapesize(0.5, 0.5)
 re.color("black")
-
+screen.update()
 
 def set_time():
     t=int(screen.textinput("time","if you want to set time\n then enter 1 else 0"))
